@@ -11,7 +11,7 @@ const handleSignin = (req, res, knex, bcrypt) => {
       return knex.select('*').from('users')
       .where('email', '=', email)
       .then(user => {
-        res.json(user[0])
+        res.json(user[0]);
       })
       .catch(err => res.status(400).json('unable to get user'));
     } else {
@@ -19,8 +19,8 @@ const handleSignin = (req, res, knex, bcrypt) => {
     }
   })
   .catch(err => res.status(400).json('wrong credentials'));
-}
+};
 
 module.exports = {
   handleSignin: handleSignin
-}
+};
